@@ -1,0 +1,6 @@
+powerComsumptionAll = read.csv("C:/Users/anshi/OneDrive/Documents/ExploratoryDataAnalysis/exdata_data_household_power_consumption/household_power_consumption.txt", header = TRUE, sep = ";")
+powerData = subset(powerComsumptionAll, powerComsumptionAll$Date == "1/2/2007" | powerComsumptionAll$Date == "2/2/2007")
+powerData$Global_active_power = as.numeric(as.character(powerData$Global_active_power))
+hist(powerData$Global_active_power, xlab = "Global Active Power (kilowatts)", col="red", main="Global Active Power")
+dev.copy(png, "plot1.png", height = 480, width = 480)
+dev.off()
